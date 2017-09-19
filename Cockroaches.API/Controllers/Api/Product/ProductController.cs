@@ -28,7 +28,7 @@ namespace Cockroaches.API.Controllers.Api
         }
 
         /// <summary>
-        /// Get Products by ProductCategoryIds
+        /// Get Products by ProductCategoryIds. User must have products roles to access
         /// </summary>
         /// <param name="query"></param>
         /// <returns></returns>
