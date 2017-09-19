@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{372F68A0-9DE2-442A-8822-84CB9061E9C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cockroaches.Model</RootNamespace>
+    <AssemblyName>Cockroaches.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FluentValidation, Version=6.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System-Web-Helpers.dll.1.0.0\lib\Net40\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\IdentityModels.cs" />
+    <Compile Include="ApplicationLogging.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetGroup.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetGroupRole.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetGroupUser.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetRole.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUser.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserClaim.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserLogin.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AspNetUserRole.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Banner.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cockroaches.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cockroaches.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cockroaches.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cockroaches.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cockroaches.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Comment.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomEntities\IpInfo.cs" />
+    <Compile Include="CustomEntities\NewsCategoriesTree.cs" />
+    <Compile Include="CustomEntities\ProductCategoriesTree.cs" />
+    <Compile Include="CustomEntities\UploadHelper.cs" />
+    <Compile Include="C__MigrationHistory.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalProperty.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemAttachment.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemImage.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginHistory.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Manufacture.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MenuItem.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewsArticle.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewsCategory.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NewsCategoryNewsarticle.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategory.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategoryProduct.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SitePage.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SocialNetworkConfig.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPGetLoginHistory_Result.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPGetProductCategoriesByParentId_Result.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SPGetProducts_Result.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Status.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SystemConfig.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Validators\Media\BannerValidator.cs" />
+    <Compile Include="Validators\NewsArticle\NewsArticleValidator.cs" />
+    <Compile Include="Validators\NewsArticle\NewsCategoryNewsArticleValidator.cs" />
+    <Compile Include="Validators\NewsArticle\NewsCategoryValidator.cs" />
+    <Compile Include="Validators\Product\ProductCategoryProductsValidator.cs" />
+    <Compile Include="Validators\Product\ProductCategoryValidator.cs" />
+    <Compile Include="Validators\Product\GlobalPropertyValidator.cs" />
+    <Compile Include="Validators\Product\ProductValidator.cs" />
+    <Compile Include="Validators\Share\ApplicationLoggingValidator.cs" />
+    <Compile Include="Validators\Share\ItemAttachmentsValidator.cs" />
+    <Compile Include="Validators\Share\SystemConfigValidator.cs" />
+    <Compile Include="Validators\Share\SocialNetworkConfigValidator.cs" />
+    <Compile Include="Validators\Share\ItemImageValidator.cs" />
+    <Compile Include="Validators\Share\StatusValidator.cs" />
+    <Compile Include="Validators\Share\LoginHistoryValidator.cs" />
+    <Compile Include="Validators\Site\MenuItemsValidator.cs" />
+    <Compile Include="Validators\Site\MenuValidator.cs" />
+    <Compile Include="Validators\Site\SitePageValidator.cs" />
+    <Compile Include="Validators\User\AspNetGroupsValidator.cs" />
+    <Compile Include="Validators\User\AspNetGroupUsersValidator.cs" />
+    <Compile Include="Validators\User\AspNetUserRolesValidator.cs" />
+    <Compile Include="Validators\User\AspNetRoleValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Cockroaches.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Cockroaches.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Cockroaches.edmx.diagram">
+      <DependentUpon>Cockroaches.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cockroaches.Core\Cockroaches.Core.csproj">
+      <Project>{A19C1649-2612-42F8-949B-2F3BEE62162A}</Project>
+      <Name>Cockroaches.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cockroaches.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Cockroaches.edmx</DependentUpon>
+      <LastGenOutput>Cockroaches.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Cockroaches.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Cockroaches.edmx</DependentUpon>
+      <LastGenOutput>Cockroaches.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

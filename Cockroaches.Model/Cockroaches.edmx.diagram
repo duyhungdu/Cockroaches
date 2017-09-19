@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="75e1ef9049a349a0a8529b90ca3b936a" Name="Diagram1">
+        <EntityTypeShape EntityType="Cockroaches.Model.Manufacture" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.C__MigrationHistory" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.AspNetGroupRole" Width="1.5" PointX="8" PointY="9.375" />
+        <EntityTypeShape EntityType="Cockroaches.Model.AspNetGroup" Width="1.5" PointX="5.75" PointY="7.25" />
+        <EntityTypeShape EntityType="Cockroaches.Model.AspNetGroupUser" Width="1.5" PointX="8" PointY="7" />
+        <EntityTypeShape EntityType="Cockroaches.Model.AspNetRole" Width="1.5" PointX="3.75" PointY="11" />
+        <EntityTypeShape EntityType="Cockroaches.Model.AspNetUserClaim" Width="1.5" PointX="3" PointY="7.875" />
+        <EntityTypeShape EntityType="Cockroaches.Model.AspNetUserLogin" Width="1.5" PointX="3" PointY="2.5" />
+        <EntityTypeShape EntityType="Cockroaches.Model.AspNetUserRole" Width="1.5" PointX="6" PointY="3.875" />
+        <EntityTypeShape EntityType="Cockroaches.Model.AspNetUser" Width="1.5" PointX="0.75" PointY="2.625" />
+        <EntityTypeShape EntityType="Cockroaches.Model.sysdiagram" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.Banner" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.NewsArticle" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.NewsCategory" Width="1.5" PointX="10.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.NewsCategoryNewsarticle" Width="1.5" PointX="5.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.GlobalProperty" Width="1.5" PointX="7.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.Product" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.ProductCategory" Width="1.5" PointX="12.75" PointY="7.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.ProductCategoryProduct" Width="1.5" PointX="12.75" PointY="13.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.ApplicationLogging" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.ItemAttachment" Width="1.5" PointX="14.75" PointY="5.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.ItemImage" Width="1.5" PointX="14.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.LoginHistory" Width="1.5" PointX="9.75" PointY="15.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.SocialNetworkConfig" Width="1.5" PointX="14.75" PointY="15.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.Status" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.SystemConfig" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.Comment" Width="1.5" PointX="16.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.Menu" Width="1.5" PointX="5.75" PointY="16.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.MenuItem" Width="1.5" PointX="16.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Cockroaches.Model.SitePage" Width="1.5" PointX="11.75" PointY="16.75" />
+        <AssociationConnector Association="Cockroaches.Model.FK_AspNetGroupRoles_AspNetGroups" />
+        <AssociationConnector Association="Cockroaches.Model.FK_AspNetGroupUsers_AspNetGroups" />
+        <AssociationConnector Association="Cockroaches.Model.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" />
+        <AssociationConnector Association="Cockroaches.Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="Cockroaches.Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="Cockroaches.Model.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
