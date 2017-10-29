@@ -575,7 +575,7 @@
         </member>
         <member name="M:Cockroaches.API.Controllers.Api.ProductController.GetProducts(Cockroaches.Repository.Queries.ProductQuery)">
             <summary>
-            Get Products by ProductCategoryIds
+            Get Products by ProductCategoryIds. User must have products roles to access
             </summary>
             <param name="query"></param>
             <returns></returns>
@@ -699,7 +699,7 @@
         </member>
         <member name="T:Cockroaches.API.Controllers.Api.StatusController">
             <summary>
-            News API
+            Share API
             </summary>
         </member>
         <member name="M:Cockroaches.API.Controllers.Api.StatusController.#ctor(Cockroaches.ApplicationService.Implementation.Contract.IShareService)">
@@ -707,6 +707,13 @@
             Contructor
             </summary>
             <param name="_shareService"></param>
+        </member>
+        <member name="M:Cockroaches.API.Controllers.Api.StatusController.Search(Cockroaches.Repository.Queries.StatusQuery)">
+            <summary>
+            Filter Statuses
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
         </member>
         <member name="T:Cockroaches.API.Controllers.Api.SitePageController">
             <summary>

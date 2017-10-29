@@ -54,7 +54,6 @@ namespace Cockroaches.ApplicationService
             }
             return response;
         }
-
         public BaseListResponse<SPGetLoginHistory_Result> FilterLoginHistory(LoginHistoryQuery query)
         {
             var response = new BaseListResponse<SPGetLoginHistory_Result>();
@@ -72,10 +71,28 @@ namespace Cockroaches.ApplicationService
             }
             return response;
         }
-
         #endregion LoginHistory
 
-       
+        #region Statuses
+        public BaseListResponse<SPGetStatus_Result> FilterStatuses(StatusQuery query)
+        {
+            var response = new BaseListResponse<SPGetStatus_Result>();
+            int count = 0;
+            try
+            {
+                response.Data = _statusRepository.Filter(query, out count);
+                response.TotalItems = count;
+                response.PageNumber = query.PageNumber != 0 ? query.PageNumber : 1;
+                response.PageSize = query.PageSize;
+            }
+            catch (Exception ex)
+            {
+                response.Message = "Error: " + ex.Message + " StackTrace: " + ex.StackTrace;
+                response.IsSuccess = false;
+            }
+            return response;
+        }
+        #endregion Statuses
 
     }
 }

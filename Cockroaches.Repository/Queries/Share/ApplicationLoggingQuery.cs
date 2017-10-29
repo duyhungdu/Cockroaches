@@ -8,8 +8,9 @@ using System.Threading.Tasks;
 
 namespace Cockroaches.Repository.Queries
 {
-    public class ApplicationLoggingQuery : BaseQuery<ApplicationLogging>
+    public class StatusQuery : BaseQuery<Status>
     {
+        public string Type { get; set; }
         public string Keyword { get; set; }
     }
 }

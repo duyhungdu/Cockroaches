@@ -70,6 +70,7 @@
     <Compile Include="Queries\Media\BannerQuery.cs" />
     <Compile Include="Queries\Newsarticle\NewsArticleQuery.cs" />
     <Compile Include="Queries\Product\ProductQuery.cs" />
+    <Compile Include="Queries\Share\StatusQuery.cs" />
     <Compile Include="Queries\Share\LoginHistoryQuery.cs" />
     <Compile Include="Queries\Share\ApplicationLoggingQuery.cs" />
     <Compile Include="Infracstructure\BaseRepository.cs" />

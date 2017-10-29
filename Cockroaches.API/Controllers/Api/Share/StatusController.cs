@@ -11,9 +11,9 @@ using Cockroaches.Repository.Queries;
 namespace Cockroaches.API.Controllers.Api
 {
     /// <summary>
-    /// News API
+    /// Share API
     /// </summary>
-    public class StatusController: ApiController
+    public class StatusController : ApiController
     {
         private IShareService shareService;
 
@@ -24,6 +24,16 @@ namespace Cockroaches.API.Controllers.Api
         public StatusController(IShareService _shareService)
         {
             shareService = _shareService;
+        }
+        /// <summary>
+        /// Filter Statuses
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public BaseListResponse<SPGetStatus_Result> Search([FromUri]StatusQuery query)
+        {
+            return shareService.FilterStatuses(query);
         }
     }
 }

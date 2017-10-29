@@ -16,7 +16,8 @@ namespace Cockroaches.ApplicationService.Implementation.Contract
         BaseListResponse<SPGetLoginHistory_Result> FilterLoginHistory(LoginHistoryQuery query);
         #endregion LoginHistory
 
-      
-
+        #region Statuses
+        BaseListResponse<SPGetStatus_Result> FilterStatuses(StatusQuery query);
+        #endregion Statuses
     }
 }

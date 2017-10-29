@@ -217,5 +217,26 @@ namespace Cockroaches.Model
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SPGetProducts_Result>("SPGetProducts", productCategoryIdsParameter, keywordParameter, countItemParameter);
         }
+    
+        public virtual ObjectResult<SPGetStatus_Result> SPGetStatus(string type, string keyword, Nullable<int> start, Nullable<int> limit, ObjectParameter total)
+        {
+            var typeParameter = type != null ?
+                new ObjectParameter("type", type) :
+                new ObjectParameter("type", typeof(string));
+    
+            var keywordParameter = keyword != null ?
+                new ObjectParameter("keyword", keyword) :
+                new ObjectParameter("keyword", typeof(string));
+    
+            var startParameter = start.HasValue ?
+                new ObjectParameter("start", start) :
+                new ObjectParameter("start", typeof(int));
+    
+            var limitParameter = limit.HasValue ?
+                new ObjectParameter("limit", limit) :
+                new ObjectParameter("limit", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<SPGetStatus_Result>("SPGetStatus", typeParameter, keywordParameter, startParameter, limitParameter, total);
+        }
     }
 }

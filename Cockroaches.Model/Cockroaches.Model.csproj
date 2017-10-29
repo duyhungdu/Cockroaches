@@ -204,6 +204,9 @@
     <Compile Include="SPGetProducts_Result.cs">
       <DependentUpon>Cockroaches.tt</DependentUpon>
     </Compile>
+    <Compile Include="SPGetStatus_Result.cs">
+      <DependentUpon>Cockroaches.tt</DependentUpon>
+    </Compile>
     <Compile Include="sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>Cockroaches.tt</DependentUpon>
     </Compile>

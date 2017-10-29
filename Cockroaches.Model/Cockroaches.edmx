@@ -658,6 +658,13 @@
           <Parameter Name="limit" Type="int" Mode="In" />
           <Parameter Name="total" Type="int" Mode="InOut" />
         </Function>
+        <Function Name="SPGetStatus" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="share">
+          <Parameter Name="type" Type="nvarchar" Mode="In" />
+          <Parameter Name="keyword" Type="nvarchar" Mode="In" />
+          <Parameter Name="start" Type="int" Mode="In" />
+          <Parameter Name="limit" Type="int" Mode="In" />
+          <Parameter Name="total" Type="int" Mode="InOut" />
+        </Function>
         <EntityContainer Name="CockroachesModelStoreContainer">
           <EntitySet Name="Manufacture" EntityType="Self.Manufacture" Schema="cate" store:Type="Tables" />
           <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
@@ -820,6 +827,13 @@
             <Parameter Name="productCategoryIds" Mode="In" Type="String" />
             <Parameter Name="keyword" Mode="In" Type="String" />
             <Parameter Name="countItem" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SPGetStatus" ReturnType="Collection(Cockroaches.Model.SPGetStatus_Result)">
+            <Parameter Name="type" Mode="In" Type="String" />
+            <Parameter Name="keyword" Mode="In" Type="String" />
+            <Parameter Name="start" Mode="In" Type="Int32" />
+            <Parameter Name="limit" Mode="In" Type="Int32" />
+            <Parameter Name="total" Mode="InOut" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -1484,6 +1498,19 @@
           <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
           <Property Type="String" Name="StatusTitle" Nullable="false" MaxLength="256" />
         </ComplexType>
+        <ComplexType Name="SPGetStatus_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="256" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Level" Nullable="false" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <Property Type="Boolean" Name="Deleted" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="23" />
+          <Property Type="String" Name="CreatedBy" Nullable="false" MaxLength="128" />
+          <Property Type="DateTime" Name="EditedOn" Nullable="false" Precision="23" />
+          <Property Type="String" Name="EditedBy" Nullable="false" MaxLength="128" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2107,6 +2134,23 @@
                 <ScalarProperty Name="StatusId" ColumnName="StatusId" />
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="StatusTitle" ColumnName="StatusTitle" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SPGetStatus" FunctionName="Cockroaches.Model.Store.SPGetStatus">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Cockroaches.Model.SPGetStatus_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="EditedOn" ColumnName="EditedOn" />
+                <ScalarProperty Name="EditedBy" ColumnName="EditedBy" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
